@@ -1,0 +1,97 @@
+<!DOCTYPE html> <head> <title> DCORgrapher</title> </head> <body style=""> 
+
+<div id="mDiv" style= "position:relative; border:8px dotted #3333cc; background-color:pink;">
+
+<div id="util" style="position:absolute; top:50px; left:440px; width:8px; height:45px; background-color:#9933CC; "> </div>
+<div style="position:absolute; top:200px; left:740px; font-size:50px; font-weight:900; -ms-transform:rotate(-90deg); -webkit-transform:rotate(-90deg); transform:rotate(-90deg); font-weight:900" ><font color="#ff3399"> DCOR</font><font color="green">grapher</font></div>
+
+ <script type="text/javascript" src="f(x)f(y).js"> </script>   <div id="mbody" style="display:none"><span class="mclass"> X Values:</span> <br /> 
+<div> <select id="msX" onchange="init()"> <option> f(x) </option> <option> cos(x)</option> <option> sin(x) </option> <option> log(x) </option> 
+<option> tan(x) </option> 
+<option> arcos(x) </option> 
+<option> arcsin(x) </option> 
+<option> arctan(x) </option> 
+<option> sqrt(x) </option> 
+<option> X^2 </option> 
+<option> X^-1</option> 
+
+
+</select>
+
+<input type="text"  id="xValues" onchange="init()" value="" style="border:6px solid green; border-radius:45px;border-bottom:olive; border-bottom:6px solid #9933CC;"/> </div> 
+<br /> 
+<div><span class="mclass">Y Values: </span><br /> 
+
+
+<select id="msY" onchange="init()"> <option> f(y)</option> <option> cos(y)</option> <option> sin(y) </option> <option> log(y) </option> 
+<option> tan(y) </option> 
+<option> arcos(y) </option> 
+<option> arcsin(y) </option> 
+<option> arctan(y) </option> 
+<option> sqrt(y) </option> 
+<option> Y^2</option> 
+<option> Y^-1</option> 
+
+</select>
+<style>
+
+.mclass { font-weight:800; 
+color:#9900cc;}
+
+</style>
+
+<Input type="text" onchange="init()"  id="yValues"  value="" style="border:6px solid green; border-radius:45px; border-top:6px solid #9933CC;" /> </div> <br />
+<span class="mclass">X scale: </span><br /> 
+<Input type="text"  id="Xscale" /><br /> 
+<span class="mclass">Y scale:</span> <br />  
+<Input type="text" id="Yscale"  /> <br /> 
+<button onclick="Fs()"> PLOT </button>  
+
+<input type="button" id="showTable" onclick= "showOrHideTable()" value="show Table" /> <input type="button" id="insB" value="show instructions" onclick= "ins()" />
+
+
+<div id="table" > </div> 
+<div id="instructions" style="display:none;"> <table border=4> <tr> <td> <ul>
+<li> Read the <a style="color:green" href="license.txt"> license</a> before using this work.
+<br /> <br /> 
+<li> To type a range of numbers e.g  <br />
+1,3,5,7,9,11(1 to 11, increasing steadily <br />by 2), <br />
+type <br />startValue<font color="blue">to</font>endValue<font color="blue">step</font>incrementalValue.<br />
+e.g for above , type 1<font color="blue">to</font>11<font color="blue">step</font>2 into the <br />textbox. <br /> or simply type startValue<font color="blue">to</font>endValue ,e.g <br />
+1<font color='blue'>to</font>11,  if your incremental value is 1.
+<br />
+<li>If you are confused of what to use as your<br />
+<font color="blue">scale</font>, simply type 'scale' into the scale <br />box. <br />
+<li> Angles are in <font color="blue">  degrees. </font> <br /> 
+<li> The logarithm is to base <font color="blue">   ten.</font> <br /> 
+
+<li> Input your values in the spaces provided <br />and separate each value by a comma ","<br /> 
+ e.g xValues: 23, 25.58, 2, 8, 98.2 etc. <br /> 
+<li> Do not involve <font color="blue">   symbols</font> other than dot "." <br /> and comma "," in your inputs. <br /> 
+<li> Your inputs must have equal numbers of <font color="blue">  <br />points. </font><br /> 
+<li> If all your points do not enter the graph, <br />or you have clustered points, try adjusting <br />your<font color="blue">   scales.</font>
+<br /> 
+<li> The scale is <font color="blue">  2cm </font> rep(or to) your specified <br />value.
+</ul></td> </tr> </table>
+</div> 
+</div>
+<canvas id="canvas" width=800 height=800> <font color="red"> If you see this text, it means that you did not open this script in a browser. But if you open it in a web browser and still see this, please try updating your browser!</font></canvas> 
+<br /> <br /> <br /> 
+
+<div id="noscript"> <font color="red"> if you see this text, it is either your browser do not support javascript or the javascript of your browser is turned off. Go to browser settings to enable javascript! </font> </div>
+
+<script> { document.getElementById("noscript").style.display="none"; document.getElementById("mbody").style.display="block"; document.getElementById("instructions").focus();  }</script> 
+
+<div id="footer" style="font-family:serif; font-size:20px; text-align:center"> </div> 
+<script type="text/javascript" src="instructions.js"> </script> 
+<script type="text/javascript" src="majorScript.js"> </script> 
+
+</div>
+
+</body>
+
+
+
+
+
+</html>
