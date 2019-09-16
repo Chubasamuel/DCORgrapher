@@ -114,20 +114,34 @@ switch(msY){
 
 function F2(x) { 
 var msX= document.getElementById("msX").selectedIndex; 
-if(msX==-1) { return x; }
-else if(msX==0) { return x; }
-else if(msX==1) { return cosineThem(x); }
-else if(msX==2) { return sineThem(x); }
-else if(msX==3) { return logThem(x); }
-else if(msX==4) { return tanThem(x); } 
-else if(msX==5) { return acosThem(x); }
-else if(msX==6) { return asineThem(x); }
-else if(msX==7) { return atanThem(x); }
-else if(msX==8) { return sqrtThem(x); }
-else if(msX==9) { return squareThem(x); }
-else if(msX==10) { return invThem(x); } 
-
-else { alert("An internal error occurred while trying to process your request"); }}
+	switch(msX){
+		case -1: { return x; }
+			break;
+		case 0: { return x; }
+			break;
+		case 1:{ return cosineThem(x); }
+			break;
+		case 2 : { return sineThem(x); }
+			break;
+		case 3 :{ return logThem(x); }
+			break;
+		case 4: { return tanThem(x); } 
+			break;
+		case 5 :{ return acosThem(x); }
+			break;
+		case 6: { return asineThem(x); }
+			break;
+		case 7:{ return atanThem(x); }
+			break;
+		case 8:{ return sqrtThem(x); }
+			break;
+		case 9:{ return squareThem(x); }
+			break;
+		case 10:{ return invThem(x); }
+			break;
+		default:{ alert("An internal error occurred while trying to process your request"); }
+	}
+	}
 
 
 
@@ -418,19 +432,14 @@ function hideTable() { document.getElementById("table").innerHTML=null;
 function showOrHideTable() { var Tbutton= document.getElementById("showTable"); 
 if(Tbutton.value=="show Table") {showTable(); hideInstructions(); } else { hideTable() ; } }
 
-var notDigit=/[a-z]/gi;
-var symbols=/[\*#\+@?!&\`%\/:\;$\_\)(\]\[\>\<|\^]/gi;
-
 function validate() {
 var xValuesStr=xValues.toString();
 var yValuesStr=yValues.toString();
-    
- if(xValuesStr.match(notDigit)||yValuesStr.match(notDigit)) { alert("There's an alphabet among the values, check table!"); showTable(); } 
-else if(xValuesStr.match(symbols)||yValuesStr.match(symbols)) { alert("please check your inputs and remove symbols"+"    ["+"yValues: {"+yValuesStr.match(symbols)+" }  ]"+"  ["+"xValues: {"+xValuesStr.match(symbols)+"}  ]"); showTable(); }
-
- else if(xValues.length!=yValues.length) { alert("Sorry \t xValues points  is \t" +xValues.length+"  whereas, yValues points is "+yValues.length+". Please check table"  ); showTable(); } 
-else if(xValuesStr.length<1||yValuesStr.length<1) { alert("input one or more values!"); }   
-else if(""==Yscale||""==Xscale||Xscale=="    "||Yscale=="    "||Xscale==0||Yscale==0||isNaN(Xscale)||isNaN(Yscale)) { alert("Please specify your scales correctly"); }
+var re=/[^0-9,\s\.\-\+]/gi;
+ if(xValuesStr.search(re)>-1||yValuesStr.search(re)>-1) { alert("There's one or more invalid characters in the values provided, please check table!\n==>\n"+"  "+"xValues: ["+xValuesStr.match(re)+"]\n"+"yValues: ["+yValuesStr.match(re)+"]"); showTable(); } 
+ else if(xValues.length!=yValues.length) { alert("Sorry \t xValues points  is \t" +xValues.length+"  whereas, yValues points is "+yValues.length+". Please check table and balance up the points"  ); showTable(); }
+else if(xValuesStr.length<1||yValuesStr.length<1) { alert("Input one or more values!"); }
+else if(isNaN(1*Yscale)||isNaN(1*Xscale)||Yscale<=0||Xscale<=0) { alert("Please specify your scales correctly"); }
 else { PLOT(); } } 
 {
 var datec= new Date();

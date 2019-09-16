@@ -1,6 +1,6 @@
 <!DOCTYPE html> <head> <title> DCORgrapher</title> </head> <body style=""> 
 
-<div id="mDiv" style= "position:relative; border:8px dotted #3333cc; background-color:pink;">
+<div id="mDiv" style= "position:relative; background-color:;">
 
 <div id="util" style="position:absolute; top:50px; left:440px; width:8px; height:45px; background-color:#9933CC; "> </div>
 <div style="position:absolute; top:200px; left:740px; font-size:50px; font-weight:900; -ms-transform:rotate(-90deg); -webkit-transform:rotate(-90deg); transform:rotate(-90deg); font-weight:900" ><font color="#ff3399"> DCOR</font><font color="green">grapher</font></div>
@@ -42,9 +42,9 @@ color:#9900cc;}
 
 <Input type="text" onchange="init()"  id="yValues"  value="" style="border:6px solid green; border-radius:45px; border-top:6px solid #9933CC;" /> </div> <br />
 <span class="mclass">X scale: </span><br /> 
-<Input type="text"  id="Xscale" /><br /> 
+<Input type="text"  id="Xscale" placeholder="X Scale" value="scale"/><br /> 
 <span class="mclass">Y scale:</span> <br />  
-<Input type="text" id="Yscale"  /> <br /> 
+<Input type="text" id="Yscale"  placeholder="Y Scale" value="scale"/> <br /> 
 <button onclick="Fs()"> PLOT </button>  
 
 <input type="button" id="showTable" onclick= "showOrHideTable()" value="show Table" /> <input type="button" id="insB" value="show instructions" onclick= "ins()" />
